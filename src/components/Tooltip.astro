@@ -1,0 +1,9 @@
+---
+interface Props {
+  tip: string;
+}
+
+const { tip } = Astro.props;
+---
+
+<span class="tooltip" data-tip={tip}><slot /></span>

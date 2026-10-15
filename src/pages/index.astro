@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Tooltip from '../components/Tooltip.astro';
+import ContactIcon from '../components/ContactIcon.astro';
+---
+
+<BaseLayout
+  title="Changhui Zhou"
+  description="Welcome"
+>
+  <header>
+    <h1>
+      <Tooltip tip="[Pronunciation: Chánghuī/Chahng'hway Zhou; 汉字: 周常晖]">Changhui Zhou</Tooltip>
+    </h1>
+    <p class="muted">
+      Computer Science undergraduate @
+      <Tooltip tip="University of Illinois Urbana-Champaign">UIUC</Tooltip>
+      <span class="contact-icons">
+        <ContactIcon name="email" label="Email: czhou44@illinois.edu" value="czhou44@illinois.edu" />
+        <ContactIcon name="github" label="GitHub: Error-Eric" value="https://github.com/error-eric" />
+        <ContactIcon name="wechat" label="WeChat ID: ErrEric" value="ErrEric" />
+      </span>
+    </p>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      Hi, I'm a CS <Tooltip tip="Depending on how you define sophomore: I got 30+ credit hours, but started college September 2026">sophomore</Tooltip> in University of Illinois Urbana-Champaign. I'm currently exploring my interest in computer science. 
+    </p>
+    <p>
+      I participate in competitive programming. I got some awards in high school. 
+    </p>
+    <p>
+      I also enjoy table tennis and Call of Cthulhu TTRPG.
+    </p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li>
+        B.S. Computer Science, University of Illinois Urbana-Champaign
+      </li>
+    </ul>
+  </section>
+
+  <section id="coursework">
+    <h2>Coursework</h2>
+    <ul>
+      <li>[CS 124 + 128] Introduction to Computer Science<Tooltip tip="Proficency test credit">*</Tooltip></li>
+      <li>[CS 225] Data stuctures<Tooltip tip="Proficency test credit">*</Tooltip></li>
+      <li>Ongoing: CS 173, Math 241, etc.</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>C++, Python, Java, Linux, Git, LaTeX, etc.</li>
+    </ul>
+  </section>
+
+  <section id="awards">
+    <h2>Awards</h2>
+    <ul>
+      <li>
+        <strong>USA Computing Olympiad(USACO)</strong>, Platinum Division
+      </li>
+      <li>
+        <strong>Singapore National Olympiad in Informatics (NOI)</strong>, Gold Medal
+      </li>
+      <li>
+        <strong>American Mathematics Competition(AMC)</strong>, Distinction
+      </li>
+      <li>
+        <strong>British Physics Olympiad (BPhO)</strong>, Top Gold (Top50)
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li>Email: <a href="mailto:czhou44@illinois.edu">czhou44@illinois.edu</a></li>
+      <li>GitHub: <a href="https://github.com/error-eric">Error-Eric</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="muted">&copy; 2026 Changhui Zhou</p>
+  </footer>
+</BaseLayout>

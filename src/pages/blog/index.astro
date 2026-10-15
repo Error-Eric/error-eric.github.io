@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostPreview from '../../components/PostPreview.astro';
+
+const posts = (await getCollection('blog'))
+  .filter((post) => !(import.meta.env.PROD && post.data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Blog" description="Blog posts">
+  <header>
+    <h1>Blog</h1>
+    <p class="muted">Writings on whatever I'm thinking about.</p>
+  </header>
+
+  <section class="post-list">
+    {
+      posts.length === 0 ? (
+        <p class="muted">No posts yet.</p>
+      ) : (
+        posts.map((post) => (
+          <PostPreview
+            href={`/blog/${post.slug}`}
+            title={post.data.title}
+            description={post.data.description}
+            pubDate={post.data.pubDate}
+            tags={post.data.tags}
+          />
+        ))
+      )
+    }
+  </section>
+</BaseLayout>

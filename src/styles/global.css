@@ -1,0 +1,293 @@
+:root {
+  --bg: #101418;
+  --fg: #e7eaee;
+  --muted: #9aa3af;
+  --accent: #ff6b4a;
+  --border: #2a3038;
+  --max-width: 42rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 650;
+  margin-bottom: 0.5rem;
+}
+
+section {
+  margin-top: 2.5rem;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* --- tooltip --- */
+.tooltip {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted var(--muted);
+}
+
+.tooltip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s ease;
+  z-index: 10;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+}
+
+/* --- contact icons --- */
+.contact-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.contact-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.contact-icon:hover {
+  color: var(--accent);
+}
+
+.contact-icon svg {
+  display: block;
+}
+
+.contact-icon::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s ease;
+  z-index: 10;
+}
+
+.contact-icon:hover::after {
+  opacity: 1;
+}
+
+/* --- site nav --- */
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--fg);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* --- post list --- */
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.15rem;
+}
+
+.post-title a {
+  color: var(--fg);
+}
+
+.post-title a:hover {
+  color: var(--accent);
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-desc {
+  margin-bottom: 0.5rem;
+}
+
+/* --- tags --- */
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.tag-list li {
+  margin-bottom: 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.tag:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.tag-count {
+  font-size: 0.8rem;
+}
+
+/* --- post body --- */
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.post-body {
+  font-size: 1rem;
+}
+
+.post-body h2 {
+  margin-top: 2rem;
+}
+
+.post-body h3 {
+  margin-top: 1.5rem;
+}
+
+.post-body p {
+  margin-bottom: 1rem;
+}
+
+.post-body ul,
+.post-body ol {
+  margin-bottom: 1rem;
+}
+
+.post-body blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  margin: 1rem 0;
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-body :not(pre) > code {
+  background: #1d232b;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+}
+
+.post-body pre {
+  padding: 1rem;
+  border-radius: 0.4rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.post-body pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
