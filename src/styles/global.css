@@ -92,7 +92,8 @@ li {
   z-index: 10;
 }
 
-.tooltip:hover::after {
+.tooltip:hover::after,
+.tooltip.is-active::after {
   opacity: 1;
 }
 
@@ -144,7 +145,8 @@ li {
   z-index: 10;
 }
 
-.contact-icon:hover::after {
+.contact-icon:hover::after,
+.contact-icon.is-active::after {
   opacity: 1;
 }
 

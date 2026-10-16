@@ -25,5 +25,24 @@ const { title, description = '' } = Astro.props;
       <a href="/tags">Tags</a>
     </nav>
     <slot />
+    <script>
+      const touch = window.matchMedia('(hover: none)').matches;
+      if (touch) {
+        const tooltips = Array.from(
+          document.querySelectorAll('.tooltip, .contact-icon'),
+        );
+        tooltips.forEach((el) => {
+          el.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const active = el.classList.contains('is-active');
+            tooltips.forEach((t) => t.classList.remove('is-active'));
+            if (!active) el.classList.add('is-active');
+          });
+        });
+        document.addEventListener('click', () => {
+          tooltips.forEach((t) => t.classList.remove('is-active'));
+        });
+      }
+    </script>
   </body>
 </html>
