@@ -28,3 +28,16 @@ pnpm-debug.log*
 
 # prompts
 prompts/
+
+# LaTeX intermediates
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
