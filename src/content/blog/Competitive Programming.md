@@ -10,7 +10,7 @@ Some random notes about competitive programming.
 
 Some of my old blogs (mainly solutions, in Chinese) can be found in [Luogu](https://www.luogu.com.cn/user/217300/article)
 
-### 10-04:
+### Oct-04:
 
 ##### Finding the ring of a pseudotree
 
@@ -33,3 +33,18 @@ Instead, start with leaves and repeatedly remove nodes with degree 1 instead.
 Their reallocation is exceptionally slow, especially when hashing is expensive. 
 
 Use ``.reserve()`` to provide extra space when possible. 
+
+### Oct-18
+
+Always do background research on your teammates in icpc-styled competitions.
+
+Whats their favourite IDE, what compiler / environment?
+
+What about keyboard layout? Are they using Russian keyboard?
+
+How do we adjust?
+
+--- 
+
+Also, always think twice on ``<`` vs ``<=``.
+
