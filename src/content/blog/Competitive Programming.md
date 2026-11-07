@@ -48,3 +48,8 @@ How do we adjust?
 
 Also, always think twice on ``<`` vs ``<=``.
 
+### Nov-6
+
+Don't be afraid of run-twice problems. 
+
+Also you don't have to always test it locally.
